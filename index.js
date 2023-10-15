@@ -13,11 +13,13 @@ convertBtn.addEventListener("click", function() {
 })
 
 function renderResult() {
-  lengthEl.textContent = `${inputEl.value} meters = ${convertToImperial(inputEl.value, length).toFixed(3)} feet | ${inputEl.value} feet = ${convertToMetric(inputEl.value, length).toFixed(3)} meters`
-
-  volumeEl.textContent = `${inputEl.value} liters = ${convertToImperial(inputEl.value, volume).toFixed(3)} gallons | ${inputEl.value} gallons = ${convertToMetric(inputEl.value, volume).toFixed(3)} liters`
+  const value = inputEl.value.replace(",",".") 
   
-  massEl.textContent = `${inputEl.value} kilos = ${convertToImperial(inputEl.value, mass).toFixed(3)} pounds | ${inputEl.value} pounds = ${convertToMetric(inputEl.value, mass).toFixed(3)} kilos`
+  lengthEl.textContent = `${value} meters = ${convertToImperial(value, length).toFixed(3)} feet | ${value} feet = ${convertToMetric(value, length).toFixed(3)} meters`
+
+  volumeEl.textContent = `${inputEl.value} liters = ${convertToImperial(value, volume).toFixed(3)} gallons | ${value} gallons = ${convertToMetric(value, volume).toFixed(3)} liters`
+
+  massEl.textContent = `${value} kilos = ${convertToImperial(value, mass).toFixed(3)} pounds | ${inputEl.value} pounds = ${convertToMetric(value, mass).toFixed(3)} kilos`
 }
 
 function convertToMetric(number, index) {
