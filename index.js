@@ -13,7 +13,7 @@ convertBtn.addEventListener("click", function() {
 })
 
 function renderResult() {
-  let value = inputEl.value.replace(",",".")
+  const value = inputEl.value.replace(",",".")
   
   lengthEl.textContent = `${value} meters = ${convertToImperial(value, length).toFixed(3)} feet | ${value} feet = ${convertToMetric(value, length).toFixed(3)} meters`
 
